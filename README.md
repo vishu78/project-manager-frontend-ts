@@ -1,73 +1,79 @@
-# React + TypeScript + Vite
+# 🧩 Project Manager Frontend (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern single-page application built with **React 18**, **TypeScript**, and **Vite**, serving as the frontend for the [.NET 8 Project Manager API](https://github.com/vishu78/ProjectManagerApi).  
+It allows users to register, log in, create projects, and manage tasks with full JWT authentication.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### 👤 Authentication
+- User registration and login using JWT  
+- Stores and reuses token via **localStorage**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🧱 Projects
+- List all projects for the logged-in user  
+- Create and delete projects
 
-## Expanding the ESLint configuration
+### ✅ Tasks
+- Add, update, delete, and toggle completion status  
+- Filter tasks by completion status  
+- Basic due-date support
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🧭 Navigation
+- Built with **React Router v6** for page routing
+- Pages:
+  - `/login` – login or register  
+  - `/dashboard` – project overview  
+  - `/projects/:id` – project details and task list
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎨 UI / UX
+- Responsive layout with **Tailwind CSS**
+- Clean form validation and error messages
+- React Hooks for state management
+- Axios for API communication
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧰 Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+| Layer | Tech |
+|-------|------|
+| Framework | React 18 + TypeScript |
+| Router | React Router v6 |
+| HTTP | Axios |
+| Styling | Tailwind CSS |
+| Build Tool | Vite |
+| Auth | JWT stored in localStorage |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚙️ Installation & Setup
+
+### 🧩 Prerequisites
+- [Node.js ≥ 18](https://nodejs.org/)
+- [npm ≥ 9](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- The backend API running locally (default: `http://localhost:5265`)
+
+---
+
+### 🪜 Steps
+
+```bash
+# 1️⃣ Clone repository
+git clone https://github.com/vishu78/project-manager-frontend-ts.git
+cd project-manager-frontend-ts
+
+# 2️⃣ Install dependencies
+npm install
+
+# 3️⃣ Configure backend URL
+# Create .env file in the root with the following content:
+echo VITE_API_BASE_URL=http://localhost:5265 > .env
+
+# 4️⃣ Run the app
+npm run dev
+
+Now open your browser at
+👉 http://localhost:5173
+
