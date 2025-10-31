@@ -10,6 +10,11 @@ It allows users to register, log in, create projects, and manage tasks with full
 ### 👤 Authentication
 - User registration and login using JWT  
 - Stores and reuses token via **localStorage**
+  <img width="1366" height="768" alt="Screenshot (193)" src="https://github.com/user-attachments/assets/0c742628-9cd7-4ffd-a0fb-cb897ea68049" />
+  <img width="1366" height="768" alt="Screenshot (199)" src="https://github.com/user-attachments/assets/22a2215b-e6a6-40a5-b91d-c29a265a3ac6" />
+  <img width="1366" height="768" alt="Screenshot (196)" src="https://github.com/user-attachments/assets/b1032b60-9acf-416d-8cb2-4ae7bc50d1ee" />
+
+
 
 ### 🧱 Projects
 - List all projects for the logged-in user  
